@@ -1,0 +1,271 @@
+<div style="margin-top: 5%; ">
+  <h2 style=" margin-left: 5%;" class="text-muted">Dashboard <small>Statistics Overview</small></h2>
+  <hr>
+
+  <div class="row" >
+      <div class="col-xl-3 col-lg-6 ">
+
+            <!-- Top Tab -->
+                        <div class="card text-white" style="margin-left: 3%; background-color:crimson">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col col-xs-3">
+                                        <i class="fa fa-user fa-5x color:red"></i>
+                                    </div>
+                                    <div class="col col-xs-9 text-right">
+                                        <div class="d-block huge">{{test}}</div>
+                                        <div class="d-block">Total Users</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <span class="float-left">View Details</span>
+                                <a href="javascript:void(0)" class="float-right card-inverse" style="color: yellow;">
+                                    <span ><i class="fa fa-arrow-circle-right"></i></span>
+                                </a>
+                            </div>
+                        </div>     
+                  <!-- end tap -->
+     
+     
+     
+        </div>
+      <div class="col-xl-3 col-lg-6">
+
+                      <!-- Top Tab -->
+                      <div class="card text-white" style="background-color:darkblue">
+                          <div class="card-header">
+                              <div class="row">
+                                  <div class="col col-xs-3">
+                                      <i class="fa fa-tasks fa-5x"></i>
+                                  </div>
+                                  <div class="col col-xs-9 text-right">
+                                      <div class="d-block huge">{{courseCount}}</div>
+                                      <div class="d-block">Total Course</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="card-footer">
+                              <span class="float-left">View Details</span>
+                              <a href="javascript:void(0)" class="float-right card-inverse" style="color: yellow;">
+                                  <span ><i class="fa fa-arrow-circle-right"></i></span>
+                              </a>
+                          </div>
+                      </div>     
+                  <!-- end tap -->     
+        </div>
+
+      <div class="col-xl-3 col-lg-6">
+                    <!-- Top Tab -->
+                    <div class="card text-white" style="background-color:green">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col col-xs-9 text-right">
+                                    <div class="d-block huge">1</div>
+                                    <div class="d-block">Total faculty</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="float-left">View Details</span>
+                            <a href="javascript:void(0)" class="float-right card-inverse" style="color: yellow;">
+                                <span ><i class="fa fa-arrow-circle-right"></i></span>
+                            </a>
+                        </div>
+                    </div>     
+                <!-- end tap -->      
+        </div>
+
+
+      <div class="col-xl-3 col-lg-6">
+
+                  <div class="card text-white" style="margin-right: 3%; background-color:firebrick">
+                      <div class="card-header">
+                          <div class="row">
+                              <div class="col col-xs-3">
+                                  <i class="fa fa-star fa-5x"></i>
+                              </div>
+                              <div class="col col-xs-9 text-right">
+                                  <div class="d-block huge">4</div>
+                                  <div class="d-block">Average rating (out of 5)</div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card-footer">
+                          <span class="float-left">View Details</span>
+                          <a href="javascript:void(0)" class="float-right card-inverse" style="color: yellow;">
+                              <span ><i class="fa fa-arrow-circle-right"></i></span>
+                          </a>
+                      </div>
+                  </div>     
+              <!-- end tap -->      
+      
+        </div>
+  </div>
+  <hr />
+  <hr />
+  
+  <!-- <div class="row">
+      <div class="col-lg-8">
+          <div class="card card-default">
+              <div class="card-header">
+                  <i class="fa fa-clock-o fa-fw"></i> Details
+              </div>
+              <app-timeline></app-timeline>
+          </div>
+      </div>
+      <div class="col-lg-4">
+          <div class="card card-default mb-3">
+              <div class="card-header">
+                  <i class="fa fa-bell fa-fw"></i> Notifications 
+              </div>
+              <app-notification></app-notification>
+          </div>
+
+          <app-chat></app-chat>
+      </div>
+  </div> -->
+
+</div>
+
+
+
+<div style=" margin-left: 1%; margin-right: 1%; font-size: 90px;color:black;">
+        
+    <div class="page-title">
+
+                <div class="container title_left">
+                  <h3  style="font-display: 65; margin-left: 50%; font-family: sans-serif;">COURSE LIST</h3>
+                </div>
+  
+                <!-- <div class="title_right">
+                  <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="Search for...">
+                      <span class="input-group-btn">
+                        <button  class="btn btn-default bg-primary" type="button">Go!</button>
+                      </span>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+       <!-- start project list -->
+       <table class="table table-striped projects" style="background-color:aliceblue;">
+           
+            <thead style="background-color:grey;">
+              <tr>
+                <th style="width: 1%; font-size: 20%;">Course Code</th>
+                <th style="width: 20%;font-size: 20%">Course Name</th>
+                <th style="font-size: 20%">Price</th>
+                <th style="font-size: 20%">Discount</th>
+                <th style="font-size: 20%">Discount Days</th>
+                <th style="font-size: 20%">Status</th>
+                <!-- <th style="width: 20%">More Detail</th> -->
+              </tr>
+            </thead>
+            <tbody *ngFor="let courseList of video_course">
+              
+              <tr>
+                <td>{{courseList.tid}}</td>
+                <td>
+                  <a>{{courseList.name}} </a>
+                  <br />
+                  <small>{{courseList.name}}</small>
+                </td>
+                <td>
+                 <h2>{{courseList.price}}</h2>
+                </td>
+                <td >
+                 <h3>{{courseList.discount}}</h3>
+                </td>
+                <td >
+                    <h3>{{courseList.discount}}</h3>
+                   </td>
+
+                <td>                  
+                        <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                              </label>
+                  
+                </td>
+                <!-- <td>
+                  <a  href="#" routerLink="Not-found" class="btn btn-primary btn-xs bg-warning"><i class="fa fa-pencil"></i> Update </a>
+                  <a href="#" class="btn btn-info btn-xs bg-danger"><i class="fa fa-folder"></i> Delete </a>
+                 
+                </td> -->
+              </tr>
+              
+           
+              <tr>
+               
+             
+            </tbody>
+          </table>
+          <!-- end project list -->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

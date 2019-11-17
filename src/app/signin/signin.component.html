@@ -1,0 +1,173 @@
+<!-- 
+  <form #LoginForm = "ngForm" id="form">
+      <div class="modal-body">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="text" class="form-control" name="Username" placeholder="Username" pattern="[A-Za-z]+"[(ngModel)]="model.Username" #Username = "ngModel" required >
+            
+          </div>
+          <div [hidden]="Username.valid || Username.pristine"
+           class="alert alert-danger">
+        Invalid Input
+        </div>
+          <br>
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="password" type="password" class="form-control" name="Password" placeholder="Password" [(ngModel)] = "model.Password" #Password = "ngModel" required>
+          </div>
+          <div [hidden]="Password.valid || Password.pristine"
+           class="alert alert-danger">
+        password is required
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"  (click) = "checkLogin()" data-dismiss="modal" [disabled]="!LoginForm.valid">Login</button>
+      </div>
+      </form> -->
+
+
+
+
+       <!-- <div style="background-image: url('assets/bg-01.jpg'); background-repeat: no-repeat; background-size: 100%;">
+        <section class="container" style="margin-top: 4%; ">
+        <div class="row" >
+            <div class="col-md-6 mx-auto my-5">
+              <section class="form-elegant">
+          
+                <div class="card">
+          
+                  <div class="card-body mx-4">
+          
+                    <div class="text-center">
+                      <h3 class="dark-grey-text mb-5">
+                        <strong>Sign in</strong>
+                      </h3>
+                    </div>
+          
+                    <form [formGroup]="elegantForm" id="myform" #LoginForm = "ngForm" id="form">
+                      <div class="md-form">
+                        <input type="text"  id="elegantFormEmailEx" class="form-control" formControlName="elegantFormEmailEx" name="Username" placeholder="Username" pattern="[A-Za-z]+" [(ngModel)]="model.Username" #Username = "ngModel" required mdbInputDirective>
+                        <label for="elegantFormEmailEx">Your email</label>
+                      </div>
+                       <div [hidden]="Username.valid || Username.pristine"
+                         class="alert alert-danger">
+                          Invalid Input
+                          </div>
+          
+                      <div class="md-form pb-3">
+                        <input type="password" id="elegantFormPasswordEx" formControlName="elegantFormPasswordEx" class="form-control" name="Password" placeholder="Password" [(ngModel)] = "model.Password" #Password = "ngModel" required mdbInputDirective>
+                        <label for="elegantFormPasswordEx">Your password</label>
+                        
+                          <a href="#" class="blue-text ml-1">Forgot Password?</a>
+                        
+                      </div>
+                       <div [hidden]="Username.valid || Username.pristine"
+                       class="alert alert-danger">
+                      Invalid Input
+                      </div>
+                    </form>
+          
+                    <div class="text-center mb-3">
+                      <button type="button" style="background-color: blueviolet;" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-light" (click) = "checkLogin()" data-dismiss="modal" [disabled]="!LoginForm.valid"  mdbWavesEffect>Sign in</button>
+                    </div>
+                    <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
+          
+                    <div class="row my-3 d-flex justify-content-center">
+                      <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a waves-light" mdbWavesEffect>
+                        <i class="fa fa-facebook blue-text text-center"></i>
+                      </button>
+                      <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a waves-light" mdbWavesEffect>
+                        <i class="fa fa-twitter blue-text"></i>
+                      </button>
+                      <button type="button" class="btn btn-white btn-rounded z-depth-1a waves-light" mdbWavesEffect>
+                        <i class="fa fa-google-plus blue-text"></i>
+                      </button>
+                    </div>
+          
+                  </div>
+          
+                  <div class="modal-footer mx-5 pt-3 mb-1">
+                    <p class="font-small grey-text d-flex justify-content-end">Not a member?
+                      <a href="#" class="blue-text ml-1"> Register</a>
+                    </p>
+                  </div>
+          
+                </div>
+          
+              </section>
+          
+            </div>
+          </div>
+        
+        </section>
+        </div>
+ -->
+
+
+ <div style="background-image: url('assets/bg-01.jpg'); background-repeat: no-repeat; background-size: 100%;">
+  <section class="container" style="margin-top: 4%; ">
+  <div class="row" >
+      <div class="col-md-6 mx-auto my-5">
+        <section class="form-elegant">
+    
+          <div class="card">
+    
+            <div class="card-body mx-4">
+    
+              <div class="text-center">
+                <h3 class="dark-grey-text mb-5">
+                  <strong>Sign in</strong>
+                </h3>
+              </div>
+    
+              <form  id="myform" #LoginForm = "ngForm" id="form">
+                <div class="md-form">
+                  <input type="email" id="email" class="form-control"  name="email" pattern="[A-Za-z]+" [(ngModel)]="model.email_id" #Username = "ngModel" required mdbInputDirective>
+                  <label for="email">Your email</label>
+                </div>
+
+                <div class="md-form pb-3">
+                  <input type="password" id="password" class="form-control"  name="Password" [(ngModel)] = "model.Password" #Password = "ngModel" required mdbInputDirective>
+                  <label for="password">Your password</label>
+                  
+                    <!-- <a href="#" class="blue-text ml-1">Forgot Password?</a> -->
+                  
+                </div>
+              </form>
+    
+              <div class="text-center mb-3">
+                <button type="button" style="background-color: blueviolet;" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-light" (click) = "checkLogin()" data-dismiss="modal"  mdbWavesEffect>Sign in</button>
+              </div>
+              <!-- <p class="font-small dark-grey-text text-right d-flex justify-content-center mb-3 pt-2"> or Sign in with:</p>
+    
+              <div class="row my-3 d-flex justify-content-center">
+                <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a waves-light" mdbWavesEffect>
+                  <i class="fa fa-facebook blue-text text-center"></i>
+                </button>
+                <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a waves-light" mdbWavesEffect>
+                  <i class="fa fa-twitter blue-text"></i>
+                </button>
+                <button type="button" class="btn btn-white btn-rounded z-depth-1a waves-light" mdbWavesEffect>
+                  <i class="fa fa-google-plus blue-text"></i>
+                </button>
+              </div> -->
+    
+            </div>
+    
+            <div class="modal-footer mx-5 pt-3 mb-1">
+              <p class="font-small grey-text d-flex justify-content-end">Not a member?
+                <a routerLink="Register" class="blue-text ml-1"> Register</a>
+              </p>
+            </div>
+    
+          </div>
+    
+        </section>
+    
+      </div>
+    </div>
+  
+  </section>
+  </div>
+

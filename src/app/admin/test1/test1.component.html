@@ -1,0 +1,123 @@
+
+<!-- Steps form -->
+<div class="view background">
+    <div class=" container col-md-6" style="padding-top: 3%;" >
+       
+        <div class="card">
+          <div class="card-body mb-4">
+              <!-- Stepper -->
+              <div class="steps-form">
+                  <div class="steps-row setup-panel">
+                      <div class="steps-step">
+                          <a href="#step-9" style="margin-top: 3%;" type="button" class="btn btn-indigo btn-circle">1</a>
+                          <p>Step 1</p>
+                      </div>
+                      
+                      <div class="steps-step">
+                          <a href="#step-11" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                          <p>Step 2</p>
+                      </div>
+                  </div>
+              </div>
+        
+        
+                  <!-- First Step -->
+                  <div class="row setup-content" id="step-9">
+    
+                      <div class="col-md-12">
+    
+                          <h4 class="font-weight-bold pl-0 my-4"><strong>Step 1</strong></h4>
+
+                          <li class="nav-item dropdown white-text" dropdown>
+                                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                                Course<span class="caret"></span></a>
+                                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu"  >
+                                        <a class="dropdown-item waves-light" mdbWavesEffect *ngFor = "let course of course" (click)="changeDrop(course.cid)">{{course.name}}</a>
+                                    
+                                </div>                        
+                            </li>
+
+                            <div class="row">
+                          <div class="md-form">
+                            <i class="fa fa-user prefix white-text col-md-6"></i>
+                            <input type="text" id="form3" class="form-control text_change" [(ngModel)]="name" mdbInputDirective>
+                            <label for="form3"> name</label>
+                        </div>
+
+
+
+                        <div class="md-form col-md-6">
+                            <i class="fa fa-envelope prefix white-text"></i>
+                            <input type="text" id="form2 " class="form-control text_change" [(ngModel)]="refer_link" mdbInputDirective>
+                            <label for="form2">refer link</label>
+                        </div>
+                    </div>
+                       
+                    <div class="row ">
+                         <div class="md-form ">
+                              <i class="fa fa-envelope prefix white-text"></i>
+                              <input type="number" id="form2" class="form-control" [(ngModel)]="price" style="color: white" mdbInputDirective>
+                              <label for="form2">Price</label>
+                          </div>
+
+                         <div class="md-form col-md-6">
+                                  <i class="fa fa-envelope prefix white-text"></i>
+                                  <input type="number" id="form2" class="form-control" [(ngModel)]="discount" style="color: white" mdbInputDirective>
+                                  <label for="form2">Discount</label>
+                           </div>     
+                           
+                           <div class="md-form">
+                                <i class="fa fa-lock prefix white-text"></i>
+                                <input type="date" id="form4" class="form-control text_change" [(ngModel)]="discount_till" mdbInputDirective>
+
+                            </div>
+                        </div>                   
+                          <button class="btn btn-indigo btn-rounded nextBtn float-right" type="button">Next</button>
+                      </div>
+                   </div>
+        
+        
+                  <!-- Third Step -->
+                  <div class="row setup-content" id="step-11">
+                      <div class="col-md-12">
+                          <h4 class="font-weight-bold pl-0 my-4"><strong>Step 2</strong></h4>
+                          <h4>File Upload</h4>
+                        
+                          
+                        <select [(ngModel)] ="type" (change)="goChange(type)"> 
+                          <option>video</option>
+                          <option>text</option>
+                          <option>sample papers</option>
+                              
+                      </select>
+
+                        <div class="md-form">
+                                <i class="fa fa-envelope prefix white-text"></i>
+                                <input type="text" id="form2" class="form-control" [(ngModel)]="topic" style="color: white;" mdbInputDirective>
+                                <label for="form2">Topic Name</label>
+                        </div>
+                        <div class="text-center white-text">
+                            <!-- <button class="btn btn-indigo waves-light" (click)="tutorial()" mdbWavesEffect>Add</button> -->
+                            <input id="photo" type="file" name="pic" [hidden]="!video" multiple= "multiple" accept="image/*"> 
+                            <!-- <button class="btn btn-indigo waves-light" id="video_upload" (click)="upload()" mdbWavesEffect>video</button> -->
+                             <hr class="hr-light mb-3 mt-4">
+
+                        </div>   
+
+                        <!-- <div class="md-form">
+                            <i class="fa fa-envelope prefix white-text"></i>
+                            <textarea id="form2 "  class="form-control text_change" [(ngModel)]="text_content" mdbInputDirective>
+                            <label for="form2">add text content</label>
+                            </textarea>
+                        </div> -->
+                        <div>
+                            <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="text_content" style="color: white;"></app-ngx-editor>
+                        </div>
+                          <button class="btn btn-indigo btn-rounded prevBtn float-left" type="button">Previous</button>
+                          <button class="btn btn-default btn-rounded float-right" id="send_email" type="button" (click)="tutorial()">Submit</button>
+                      </div>
+                  </div>
+          </div>
+        </div>
+        </div>
+    </div>

@@ -1,0 +1,20 @@
+<div class="sidenav row col-md-2" style="margin-top: 4.2%; " >
+  <!-- <ul *ngFor="let reg of menu">
+    <li><a (click)= "getCategoryData(reg)">{{reg.category}}</a></a></li>
+  </ul> -->
+  <ul>
+    
+    <br>
+    <br>
+    <!-- <a style="text-align: center; font-size: 4vh;"  >{{textData}} </a> -->
+    <a style="text-align: center; font-size: 4vh;" *ngFor="let text_course of title" [ngValue]="text_course.tid" (click)="textTutorial(text_course.tid)">{{text_course.name}} <br> </a>
+
+    <br><br><br><br><br><br><br>
+  </ul>
+</div>
+
+<div  style="margin-top: 10%; background-color: white; margin-left:240px;" >
+<h1  *ngFor="let textData of textData" style="font-size: 100%;"><span innerHTML="{{textData.content}}" ></span></h1>
+
+</div>
+

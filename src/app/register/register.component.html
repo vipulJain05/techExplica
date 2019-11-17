@@ -1,0 +1,289 @@
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	var from,to,subject,text;
+	$("#send_email").click(function(){		
+		to=$("#form2").val();		
+		$("#message").text("Sending E-mail...Please wait");
+		$.get("http://localhost:3000/send",{to:to},function(data){
+		if(data=="sent")
+		{
+			$("#message").empty().html("<br>Hi "+ to+",<p>Email is been sent at "+to+" . Please check inbox !</p>");
+		}
+		else{
+			$("#message").empty().html("<br><b>Hi</b> "+ to+", <br>Email is not sent. Please try again!<");
+
+		}
+
+});
+	});
+});
+</script>
+
+
+<header>
+    <section class="view intro-2">
+        <div class="full-bg-img mask rgba-gradient">
+            <div class="container flex-center">
+                <div class="d-flex align-items-center content-height w-100">
+                    <div class="row flex-center pt-5 mt-3 w-100">
+                        <div class="col-md-6 col-xl-5 offset-xl-1">
+  
+                            <div class="card wow fadeInRight" data-wow-delay="0.3s">
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <h3 class="white-text"><i class="fa fa-user white-text"></i> Register:</h3>
+                                        <hr class="hr-light">
+                                    </div>
+  
+                                    <div class="md-form">
+                                        <i class="fa fa-user prefix white-text"></i>
+                                        <input type="text" id="form3" class="form-control text_change" [(ngModel)]="model.Username" mdbInputDirective>
+                                        <label for="form3">Your name</label>
+                                    </div>
+  
+
+                                    <div class="md-form">
+                                        <i class="fa fa-envelope prefix white-text"></i>
+                                        <input type="email" id="form2 " class="form-control text_change" [(ngModel)]="model.email_id" mdbInputDirective>
+                                        <label for="form2">Your email</label>
+                                    </div>
+  
+                                   
+  
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="password" id="form4" class="form-control text_change" [(ngModel)]="model.Password" mdbInputDirective>
+                                        <label for="form4">Your password</label>
+                                    </div>
+
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="password" id="Retype" class="form-control text_change" [(ngModel)]="model.Retype" mdbInputDirective>
+                                        <label for="Retype">Retype Your password</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="text" id="school" class="form-control text_change" [(ngModel)]="model.School" mdbInputDirective>
+                                        <label for="school">School/college Name</label>
+                                    </div>
+                                    <div class="md-form">
+                                            <i class="fa fa-lock prefix white-text"></i>
+                                            <input type="number" id="phone" class="form-control text_change" [(ngModel)]="model.phone" mdbInputDirective>
+                                            <label for="phone">phone number</label>
+                                        </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="text" id="address 1" class="form-control text_change" [(ngModel)]="model.line1" mdbInputDirective>
+                                        <label for="address 1">Line 1</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="text" id="address 2" class="form-control text_change" [(ngModel)]="model.line2" mdbInputDirective>
+                                        <label for="address 2">Line 2</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="text" id="city" class="form-control text_change" [(ngModel)]="model.city" mdbInputDirective>
+                                        <label for="city">City</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="text" id="state" class="form-control text_change" [(ngModel)]="model.state" mdbInputDirective>
+                                        <label for="state">state</label>
+                                    </div>
+
+                                    <div class="md-form">
+                                        <i class="fa fa-lock prefix white-text"></i>
+                                        <input type="text" id="pincode" class="form-control text_change" [(ngModel)]="model.pincode" mdbInputDirective>
+                                        <label for="pincode">pincode</label>
+                                    </div>
+                                    <select>
+                                        <option>sybject 1</option>
+                                        <option>sybject 2</option>
+                                        <option>sybject 3</option>
+                                    </select>
+                                    <div class="md-form">
+                                            <i class="fa fa-lock prefix white-text"></i>
+                                            <input type="text" id="interest" class="form-control text_change" [(ngModel)]="model.interest" mdbInputDirective>
+                                            <label for="interest">interest</label>
+                                        </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-indigo waves-light" id="send_email" (click)="register()" mdbWavesEffect>Sign up</button>
+                                         <hr class="hr-light mb-3 mt-4">
+  
+                                            <div class="inline-ul text-center d-flex justify-content-center">
+                                                <a class="icons-sm tw-ic px-4"><i class="fa fa-twitter white-text"></i></a>
+                                                <a class="icons-sm li-ic px-4"><i class="fa fa-linkedin white-text"> </i></a>
+                                                <a class="icons-sm ins-ic px-4"><i class="fa fa-instagram white-text"> </i></a>
+                                            </div>
+
+                                            <span id="message" ></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </header> -->
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  <!-- Steps form -->
+  <div class="view background">
+<div class="  container col-md-6" style="padding-top: 3%;" >
+   
+    <div class="card">
+      <div class="card-body mb-4">
+          <h3 class="text-center font-weight-bold pt-4 pb-5"><strong>Registration</strong></h3>
+    
+          <!-- Stepper -->
+          <div class="steps-form">
+              <div class="steps-row setup-panel">
+                  <div class="steps-step">
+                      <a href="#step-9" type="button" class="btn btn-indigo btn-circle">1</a>
+                      <p>Step 1</p>
+                  </div>
+                  <div class="steps-step">
+                      <a href="#step-10" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                      <p>Step 2</p>
+                  </div>
+                  <div class="steps-step">
+                      <a href="#step-11" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                      <p>Step 3</p>
+                  </div>
+              </div>
+          </div>
+    
+          <!-- <form role="form" action="" method="post"> -->
+    
+              <!-- First Step -->
+              <div class="row setup-content" id="step-9">
+
+                  <div class="col-md-12">
+
+                      <h4 class="font-weight-bold pl-0 my-4"><strong>Step 1</strong></h4>
+                      <div class="form-group md-form">
+                          <input placeholder="full name" id="yourName" type="text" name="name" required="required" class="form-control " [(ngModel)]="model.Username" >
+                          <label for="yourName"></label>
+                      </div>
+
+
+                      <div class="md-form form-group">
+                        <input mdbInputDirective type="email" required="required" class="form-control" id="email" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" [(ngModel)]="model.email_id">
+                        <label for="email">Type your e-mail</label>
+                    </div>
+
+                      <!-- <div class="form-group md-form">
+                        <input id="email" type="email" required="required" class="form-control validate" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" [(ngModel)]="model.email_id" >
+                        <label for="email" data-error="wrong" data-success="right">Email id</label>
+                    </div> -->
+                      <div class="form-group md-form mt-3">
+                            <input mdbInputDirective type="password" required="required" class="form-control" [(ngModel)]="model.Password" id="password" name="password">
+
+                          <!-- <input id="password" type="password" required="required" class="form-control validate" [(ngModel)]="model.Password" mdbInputDirective > -->
+                          <label for="password" data-error="wrong " data-success="right">Password</label>
+                        </div>
+                      <div class="form-group md-form mt-3">
+                            <input id="retypepassword" type="password"  required="required" class="form-control validate" name="retypepassword" [(ngModel)]="model.Retype" mdbInputDirective>
+                        <label for="retypepassword" data-error="wrong" data-success="right">Retype Password</label>
+                    </div>
+                      <!-- <div class="form-group md-form mt-3">
+                          <label for="retype" data-error="wrong" data-success="right">Address</label>
+                          <textarea id="retype" type="password" required="required" rows="2" class="md-textarea validate form-control"></textarea>
+                      </div> -->
+                      <p style="color: red;">For  password, Choose <b>alphabet and numberic</b></p>
+                      <button class="btn btn-indigo btn-rounded nextBtn float-right" type="button">Next</button>
+                  </div>
+              </div>
+    
+              <!-- Second Step -->
+              <div class="row setup-content" id="step-10">
+                  <div class="col-md-12">
+                      <h3 class="font-weight-bold pl-0 my-4"><strong>Step 2</strong></h3>
+                      <h4>Personal Information</h4>
+    
+                      <div class="form-group md-form">
+                        <input id="schoolname" type="text" required="required" class="form-control validate" [(ngModel)]="model.School" mdbInputDirective>
+                        <label for="schoolname" data-error="wrong" data-success="right">School/College Name</label>
+                    </div>
+    
+                      <div class="form-group md-form">
+                            <input id="phonenumber" value="+91" type="number"  required="required" maxlength="10" minlength="10" class="form-control validate" [(ngModel)]="model.phone" mdbInputDirective>
+                          <label for="phonenumber" data-error="wrong" data-success="right">Phone Number</label>
+                      </div>
+                  
+                      <!-- <select>
+                        <option>sybject 1</option>
+                        <option>sybject 2</option>
+                        <option>sybject 3</option>
+                    </select> -->
+    
+                    <div class="form-group md-form">
+                            <input id="interest" type="text" required="required" class="form-control validate" [(ngModel)]="model.interest" mdbInputDirective >
+                        <label for="interest" data-error="wrong" data-success="right">Interest</label>
+                    </div>
+    
+                      <button class="btn btn-indigo btn-rounded prevBtn float-left" type="button">Previous</button>
+                      <button class="btn btn-indigo btn-rounded nextBtn float-right" type="button">Next</button>
+                  </div>
+              </div>
+    
+              <!-- Third Step -->
+              <div class="row setup-content" id="step-11">
+                  <div class="col-md-12">
+                      <h4 class="font-weight-bold pl-0 my-4"><strong>Step 3</strong></h4>
+                      <h4>Address</h4>
+                      <div class="form-group md-form">
+                            <input id="line1" type="text" required="required" class="form-control validate" [(ngModel)]="model.line1"  mdbInputDirective>
+                          <label for="line1" data-error="wrong" data-success="right">Line 1</label>
+                      </div>
+                      <div class="form-group md-form mt-3">
+                            <input id="line2" type="text" required="required" class="form-control validate" [(ngModel)]="model.line2" mdbInputDirective>
+                          <label for="line2" data-error="wrong" data-success="right">Line 2</label>
+                      </div>
+                      <div class="form-group md-form mt-3">
+                            <input id="city" type="text" required="required" class="form-control validate" [(ngModel)]="model.city" mdbInputDirective >
+                            <label for="city" data-error="wrong" data-success="right">City</label>
+                        </div>
+                        <div class="row">
+                           
+                        <div class="form-group md-form mt-3 col-md-6">
+                                <input id="state" type="text" required="required" class="form-control validate" [(ngModel)]="model.state" mdbInputDirective>
+                                <label for="state" data-error="wrong" data-success="right">State</label>
+                            </div>
+                            <div class="form-group md-form mt-3 col-md-6">
+                                    <input id="pincode" type="number" required="required" maxlength="6" minlength="6" class="form-control validate" [(ngModel)]="model.pincode" mdbInputDirective>
+                                    <label for="pincode" data-error="wrong" data-success="right">Pin Code</label>
+                                </div>
+                                
+                            </div>    
+    
+                      <button class="btn btn-indigo btn-rounded prevBtn float-left" type="button">Previous</button>
+                      <button class="btn btn-default btn-rounded float-right" id="send_email" type="button" (click)="register()">Submit</button>
+                  </div>
+              </div>
+    
+          <!-- </form> -->
+    
+      </div>
+    </div>
+    </div>
+</div>
+    <!-- Steps form -->

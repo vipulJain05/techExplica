@@ -1,0 +1,81 @@
+
+<div >
+  <!--Section: courses v.1-->
+  <section class="text-center pb-3 my-5">
+      <!--Section heading-->
+      <h2 class="h1 font-weight-bold h1 py-5">Our Courses</h2>
+      <!--Section description-->
+      <p class="grey-text pb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse
+        quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p>
+        <!-- <select type="text" [(ngModel)]="videoCourse" (change)="CourseContent(videoCourse)">
+            <option *ngFor="let videoCourse of course" [ngValue] = "videoCourse.course">{{videoCourse.course}}</option>
+          </select> -->
+      <!--Grid row-->
+      <div class=" row">
+    
+        <!-- 2nd COurse -->
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-3" *ngFor="let videoCourse of video_course">
+            <!--Card-->
+            <div class="card card-cascade narrower card-ecommerce container" >
+              <!--Card image-->
+              <div class="view view-cascade overlay waves-light"  style="height: 250px; margin-left: 2%;" mdbWavesEffect>
+                <img src="../../assets/c++.png" class="img-fluid" alt="sample photo">
+                <a>
+                  <div class="mask rgba-white-slight"></div>
+                </a>
+              </div>
+              <!--Card image-->
+              <!--Card content-->
+              <div class="card-body card-body-cascade text-center">
+                <!--Category & Title-->
+                
+                <h4 class="card-title">
+                  <strong>
+                    <a href="">{{videoCourse.name}}</a>
+                  </strong>
+                </h4>
+                <!--Rating-->
+             
+                <!--Description-->
+                <p class="card-text">{{videoCourse.video_description}}
+                </p>
+                <!--Card footer-->
+                <div class="card-footer">
+                    <div *ngIf= "isUser; then UserFooter else GuestFooter">Admin</div>
+                    <ng-template #UserFooter>
+                    <!-- <span class="float-left font-weight-bold">
+                        <button type="button" style="background-color: blue;" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-light" mdbWavesEffect>49$</button>
+                    </span> -->
+                    <span class="float-right">
+                        <a routerLink="['/video-course-description',videoCourse.tid]"  (click) = "goToSignUp(videoCourse.tid)" style="background-color: red; width: 120%; padding-left: 20%;" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-light" mdbWavesEffect>More Details</a>
+                    </span>
+                    </ng-template>
+                    <ng-template #GuestFooter>
+                        <span class="float-left font-weight-bold">
+                            <!-- <button type="button" style="background-color: blue; width: 100%; " class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-light" mdbWavesEffect>Text </button> -->
+                        </span>
+                        <span class="float-right">
+                            <a  style="background-color: red; width: 100%; color: aliceblue;" class="btn blue-gradient btn-block btn-rounded z-depth-1a waves-light" (click)="gotochange()" mdbWavesEffect>Video </a>
+                        </span>
+                    </ng-template>
+                </div>
+              </div>
+              <!--Card content-->
+            </div>
+            <!--Card-->
+          </div>
+          <!-- end 2nd course -->
+  
+  
+  
+      </div>
+      <!--Grid row-->
+    </section>
+    <!--Section: courses v.1-->
+  
+  </div>
+
+  
+
+

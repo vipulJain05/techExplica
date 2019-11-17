@@ -1,0 +1,75 @@
+.hover1{
+    background-color:rgb(248, 186, 170);   
+}
+
+.navbar {
+    background-color: greenyellow !important;
+   }
+
+//  multi drop down start here
+.third-level-menu
+  {
+      position: absolute;
+      top: 0;
+      right: -150px;
+      width: 150px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+  }
+  
+  .third-level-menu > li > a
+  {
+      height: 30px;
+      background: white;
+  }
+  .third-level-menu > li:hover { background: #CCCCCC; 
+}
+  
+  .second-level-menu
+  {
+      position: absolute;
+      top: 30px;
+      left: 0;
+      width: 150px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+  }
+  
+  .second-level-menu > li > a
+  {
+      position: relative;
+      height: 30px;
+      background: white;
+  }
+  .second-level-menu > li:hover { background: white; }
+  
+  .top-level-menu
+  {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .top-level-menu > li
+  {
+      position: relative;
+     
+  }
+//   .top-level-menu > li:hover { //background: #CCCCCC; 
+// }
+  
+  .top-level-menu li:hover > ul
+  {
+      /* On hover, display the next level's menu */
+      display: inline;
+  }
+  
+  
+  /* Menu Link Styles */
+  
+  
+//   .top-level-menu a:hover { color: #000000; }
+//  multi drop down end here

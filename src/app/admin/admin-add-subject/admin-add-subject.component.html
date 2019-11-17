@@ -1,0 +1,41 @@
+<!-- Add Subject -->
+<div class="container" >
+  <h1 style="text-align: center; font-weight: bold;" > <u>Subject</u></h1>
+  <!-- Form -->
+<div class=" container  card wow fadeInRight "style="margin-top:3%; width: 600px; "  data-wow-delay="0.3s">
+    <div class="card-body">
+        <!--Header-->
+        <div class="text-center">
+            <h3 class="black-text"><i class="fa fa-user black-text"></i> Add New Subject</h3>
+            <hr class="hr-light">
+        </div>
+
+        <div class="md-form" >
+            <i class="fa fa-pencil prefix"></i>
+            <input type="text" id="form2"  class="form-control" [(ngModel)]="course" mdbInputDirective>
+            <label for="form2">Subject Name</label>
+        </div>
+
+        <div class="md-form" >
+            <i class="fa fa-pencil prefix"></i>
+            <input type="text" id="form9"  class="form-control" [(ngModel)]="subject_code" mdbInputDirective>
+            <label for="form9">Subject Code</label>
+        </div>
+
+        <!--Textarea with icon prefix-->
+          <div class="md-form">
+              <i class="fa fa-pencil prefix"></i>
+              <textarea type="text" id="form8" class="md-textarea form-control" [(ngModel)]="description" mdbInputDirective></textarea>
+              <label for="form8">Text area</label>
+          </div> 
+
+          <div class="text-center">
+                <button routerLink="Not-found" class="btn btn-indigo waves-light" (click)="addCourse()" mdbWavesEffect>Add Subject</button>
+            </div>
+    </div>
+</div>
+<!-- END Form-->
+<hr />
+
+<br>
+</div>

@@ -1,0 +1,191 @@
+<!-- 
+
+<div style=" margin-top: 5%;"> 
+  <h1 style="text-align: center; font-weight: bold;"> <u>Add Course</u></h1>
+<ngb-tabset type="pills" [orientation]="currentOrientation" style="margin-top: 30%; ">
+    <ngb-tab   title="Add Video Course">
+      <ng-template ngbTabContent>
+  
+  
+            <div class="card wow fadeInRight" style="width: 1300px; margin-left: 10%; margin-top: 3%;" data-wow-delay="0.3s">
+                    <div class="card-body z-depth-2">
+                      <div class="text-center">
+                        <h3 class="dark-grey-text">
+                          <strong>Video Course</strong>
+                        </h3>
+                        <hr>
+                      </div>
+                      <div class="md-form">
+                        <i class="fa fa-user prefix grey-text"></i>
+                        <input type="text" id="form3" class="form-control" [(ngModel)]="video_name" mdbInputDirective >
+                        <label for="form3">Tutorial Name</label>
+                      </div>
+                      <div class="md-form">
+                        <i class="fa fa-file-text prefix grey-text"></i>
+                        <input type="text" id="form2" class="form-control" [(ngModel)]="video_description" mdbInputDirective>
+                        <label for="form2">Description</label>
+                      </div>
+                    
+                      
+                        
+                            
+                            <div class="md-form">
+                                    <i class=" prefix grey-text"></i>
+                                    <input type="text" id="form2" class="form-control" [(ngModel)]="price" mdbInputDirective>
+                                    <label for="form2">Price</label>
+                                  </div>
+  
+  
+                                  <div class="md-form">
+                                        <i class="fa fa-money prefix grey-text"></i>
+                                        <input type="text" id="form2" class="form-control" [(ngModel)]="discount" mdbInputDirective>
+                                        <label for="form2">Discount (if any)</label>
+                                  </div>
+
+                                  <div class="md-form">
+                                    <i class="fa fa-money prefix grey-text"></i>
+                                    <input type="text" id="form2" class="form-control" [(ngModel)]="discount_days" mdbInputDirective>
+                                    <label for="form2">Discount Days</label>
+                                  </div>
+
+                      <div class="text-center mt-3">
+                        <button routerLink="Not-found"  class="btn btn-indigo" (click)="addVideoCourse()">Send</button>
+                        <br>
+                        
+                      </div>
+                    </div>
+                  </div>
+      </ng-template>
+    </ngb-tab>
+  
+  
+    <ngb-tab>
+      <ng-template ngbTabTitle>Add Tutorial Course</ng-template>
+  
+      <ng-template ngbTabContent>
+        <div class=" container  card wow fadeInRight "style="width: 600px;"  data-wow-delay="0.3s">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h3 class="black-text"><i class="fa fa-user black-text"></i> Tutorials</h3>
+                        <hr class="hr-light">
+                    </div>
+  
+                    <div class="btn-group" dropdown>
+                     
+
+                        <select [(ngModel)] ="course" (change)="courseData(course)"> 
+                            <option>Select your course</option>
+                            <option *ngFor = "let course of course" [ngValue] = "course.course" (change)="courseData(course.course)">{{course.course}}</option>
+                            
+                            </select>
+                    </div>
+  
+                    <div class="md-form" >
+                        <i class="fa fa-pencil prefix"></i>
+                        <input type="text" id="form2"  class="form-control" [(ngModel)]="topic_name" mdbInputDirective>
+                        <label for="form2">Topic Name</label>
+                    </div>
+  
+                    <div class="md-form">
+                          <i class="fa fa-pencil prefix"></i>
+                          <input type="text" id="form2" class="form-control" [(ngModel)]="sub_topic" mdbInputDirective>
+                          <label for="form2">Sub-topic</label>
+                      </div>
+  
+                      <div class="md-form">
+                              <i class="fa fa-pencil prefix"></i>
+                              <input type="text" id="form2" class="form-control" [(ngModel)]="special_note" mdbInputDirective>
+                              <label for="form2">Special Note (if any)</label>
+                       </div>
+                      <div class="md-form">
+                          <i class="fa fa-pencil prefix"></i>
+                          <textarea type="text" id="form8" class="md-textarea form-control" [(ngModel)]="content" mdbInputDirective></textarea>
+                          <label for="form8">Text area</label>
+                      </div>
+  
+                    <div class="text-center">
+                        <button routerLink="Not-found" class="btn btn-indigo waves-light" (click)="add_text()" mdbWavesEffect>Add new tutorial</button>
+                        <button routerLink="Not-found" class="btn btn-indigo waves-light" mdbWavesEffect>Add more</button>
+                         <hr class="hr-light mb-3 mt-4">
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: blanchedalmond; margin-left: 1%; margin-right: 1%;">
+                    <div class="page-title">
+                            <div class="title_left">
+                              <h3 style="margin-left: 20%; font-weight: bold;"><u>Course List</u></h3>
+                            </div>
+              
+                            <div class="title_right">
+                              <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="Search for...">
+                                  <span class="input-group-btn">
+                                    <button  class="btn btn-default bg-primary" type="button">Go!</button>
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                 
+            
+            
+            </div>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Sample paper" [dis] >
+     <ng-template ngbTabContent>
+          <form class="md-form">
+            <div class="card wow fadeInRight" style="width: 1300px; margin-left: 10%; margin-top: 3%;" data-wow-delay="0.3s">
+              <div class="card-body z-depth-2">
+                <div class="text-center">
+                  <h3 class="dark-grey-text">
+                    <strong>Sample paper</strong>
+                  </h3>
+                  <hr>
+                </div>
+                <div class="md-form">
+                  <i class="fa fa-user prefix grey-text"></i>
+                  <input type="text" id="form3" class="form-control" [(ngModel)]="Subject_name" mdbInputDirective >
+                  <label for="form3">Subject Name</label>
+                </div>
+                <div class="md-form">
+                  <i class="fa fa-file-text prefix grey-text"></i>
+                  <input type="text" id="form2" class="form-control" [(ngModel)]="Title" mdbInputDirective>
+                  <label for="form2">Title</label>
+                </div>
+              
+                
+                  
+                      
+                      <div class="md-form">
+                              <i class=" prefix grey-text"></i>
+                              <input type="text" id="form2" class="form-control" [(ngModel)]="Description"  mdbInputDirective>
+                              <label for="form2">Description</label>
+                            </div>
+
+
+                            <div class="md-form">
+                                  <i class="fa fa-money prefix grey-text"></i>
+                                  <input type="text" id="form2" class="form-control" [(ngModel)]="Sample_paper_name" mdbInputDirective>
+                                  <label for="form2">Sample paper name</label>
+                            </div>
+
+                           
+
+                <div class="text-center mt-3">
+                  <button routerLink="Not-found"  class="btn btn-indigo" (click)="SamplePaper()">Send</button>
+                  <br>
+                  
+                </div>
+              </div>
+            </div>
+          </form>
+            
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+  <hr/>
+  <hr />
+</div>
+ -->

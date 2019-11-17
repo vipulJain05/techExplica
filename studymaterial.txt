@@ -1,0 +1,342 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 10, 2018 at 06:27 PM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 7.2.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `studymaterial`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_category`
+--
+
+CREATE TABLE `tbl_category` (
+  `cid` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `p_cid` int(10) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_by` int(11) NOT NULL,
+  `is_active` int(1) NOT NULL DEFAULT '1',
+  `child_no` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_enquiry`
+--
+
+CREATE TABLE `tbl_enquiry` (
+  `eid` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email_id` varchar(50) NOT NULL,
+  `school` varchar(50) NOT NULL,
+  `interest` varchar(25) NOT NULL,
+  `phone` int(10) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_readed` int(1) NOT NULL DEFAULT '0',
+  `read_by` int(10) DEFAULT NULL,
+  `read_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_faculty`
+--
+
+CREATE TABLE `tbl_faculty` (
+  `fid` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `qualification` varchar(50) NOT NULL,
+  `tutorials` int(10) NOT NULL DEFAULT '0',
+  `last_tutorial_at` datetime NOT NULL,
+  `is_active` int(1) NOT NULL DEFAULT '1',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `modified_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` int(10) NOT NULL,
+  `modified_by` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_rating`
+--
+
+CREATE TABLE `tbl_rating` (
+  `rid` int(10) NOT NULL,
+  `tid` int(10) NOT NULL,
+  `email_id` varchar(50) NOT NULL,
+  `comment` varchar(100) DEFAULT NULL,
+  `rating` int(1) NOT NULL,
+  `pid` int(10) DEFAULT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_hide` int(1) DEFAULT '0',
+  `is_star` int(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_student`
+--
+
+CREATE TABLE `tbl_student` (
+  `sid` int(10) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `class` varchar(20) NOT NULL,
+  `email_id` varchar(30) NOT NULL,
+  `school` varchar(20) NOT NULL,
+  `Phone_no` int(10) NOT NULL,
+  `Line_1` varchar(50) NOT NULL,
+  `Line_2` varchar(50) NOT NULL,
+  `city` varchar(25) NOT NULL,
+  `state` varchar(25) NOT NULL,
+  `pincode` int(6) NOT NULL,
+  `stream` varchar(50) NOT NULL,
+  `interest` varchar(20) NOT NULL,
+  `creation_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_student`
+--
+
+INSERT INTO `tbl_student` (`sid`, `name`, `class`, `email_id`, `school`, `Phone_no`, `Line_1`, `Line_2`, `city`, `state`, `pincode`, `stream`, `interest`, `creation_at`) VALUES
+(5, 'anikesh', '10th', 'anikesh@anikesh', 'jims', 2147483647, 'erwekjf', 'u48534', 'new delhi', 'dlehi', 110085, 'science', 'android', '2018-07-10 15:25:22'),
+(11, 'vuipul', '10th', 'vipul@gmail.com', 'sssv', 1234567898, 'hdjh', 'kdshif', 'jasgdyi', 'kasjio', 110034, 'science', 'c++', '2018-07-10 15:38:59'),
+(12, 'vuipula', '10th', 'vipula@gmail.com', 'sssva', 1234567894, 'hdjha', 'kdshifa', 'jasgdyiaa', 'kasjioa', 110095, 'science', 'c++w', '2018-07-10 15:39:47'),
+(13, 'sonu', '10th', 'skp@gmail.com', 'jims', 1234567890, '1243', '23423dfsdfsf', 'fghuidg32', 'delhi', 110085, 'science', 'html', '2018-07-10 15:58:54'),
+(14, 'permil', '10th', 'garg.permil@gmail.com', 'jims', 1236549870, '1654684', 'dfnsdfhu', 'delhi', 'delhi', 110085, 'science', 'android', '2018-07-10 16:02:20'),
+(17, 'jkdfsd', '10th', 'knsdjkg', 'sjdkksdjfi', 123321123, '3455435345', 'dfgdfgdfg', 'delhi', 'delhi', 110045, 'science', 'internet', '2018-07-10 16:17:17'),
+(19, 'jkdfsd', '10th', 'knsdjkgdsfsdf', 'sjdkksdjfi', 1233211232, '3455435345', 'dfgdfgdfg', 'delhi', 'delhi', 110045, 'science', 'internet', '2018-07-10 16:19:20'),
+(20, 'lkkjjh', '10th', 'llkj@lk.com', 'djifosdfu', 1532, '321', '3413213', 'delkhi', 'delhi', 110085, 'science', 'ndroid', '2018-07-10 16:44:03'),
+(21, 'qwer', '10th', 'abcd@asd.com', 'fjsioduf', 0, '566568091', 'iurr798t34', 'delhi', 'delhi', 110045, 'science', 'lappy', '2018-07-10 16:46:59'),
+(22, 'poiuwoewqo', '10th', 'poi@pooi.com', 'jims', 456545644, 'dfnsdfu893ur', 'dsjgsfg843u5', 'delhi', 'delhi', 110047, 'science', 'sdjkfdsg', '2018-07-10 16:49:59'),
+(23, 'qazxsw', '10th', 'permil@abc.com', 'vips', 123482348, 'jdfgiou094385', 'kfdjgiljdfg984395', 'delhi', 'delhi', 880044, 'science', 'sdfjsdfh', '2018-07-10 16:53:57'),
+(24, 'cderfv', '10th', 'cderfv@sdfsdf.com', 'vips', 586789789, 'fgjkldjfg9435', 'dkfjgo492453', 'sdnjfisu93', 'delhi', 332200, 'science', 'jsdfjsd', '2018-07-10 16:56:35'),
+(25, 'qwasxz', '10th', 'saxzwq@wqsaxz.com', 'sdijfuou903485', 1212343412, 'ksdfogiu943', 'ksdjfo345', 'fjsdfu3', 'ksdjfou293', 121212, 'science', 'sdfosdfsdf', '2018-07-10 16:57:34'),
+(26, 'vip', '10th', 'vip@vip', 'vips', 123654741, 'mnblkjh', 'mnblkj', 'delhi', 'delhi', 857485, 'science', 'c++', '2018-07-10 17:16:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tutorial`
+--
+
+CREATE TABLE `tbl_tutorial` (
+  `tid` int(10) NOT NULL,
+  `catid` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `printname` varchar(50) NOT NULL,
+  `is_active` int(1) NOT NULL DEFAULT '1',
+  `refer_link` varchar(100) DEFAULT NULL,
+  `price` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
+  `discount_till` datetime DEFAULT NULL,
+  `type` int(1) NOT NULL,
+  `views` int(10) NOT NULL DEFAULT '0',
+  `Avg_Rating` float(3,2) NOT NULL DEFAULT '0.00',
+  `Login_Req` int(1) NOT NULL,
+  `Valid_till` datetime DEFAULT NULL,
+  `Subscription` int(10) NOT NULL DEFAULT '0',
+  `Created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `Updated_at` timestamp NULL DEFAULT NULL,
+  `created_by` int(10) NOT NULL,
+  `updated_by` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `uid` int(10) NOT NULL,
+  `role` int(1) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(130) NOT NULL,
+  `salt` varchar(50) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_login` timestamp NULL DEFAULT NULL,
+  `last_password_update` datetime DEFAULT NULL,
+  `is_active` int(1) NOT NULL DEFAULT '1',
+  `confirm_token` varchar(50) DEFAULT NULL,
+  `is_confirm` int(1) NOT NULL DEFAULT '0',
+  `sid` int(10) DEFAULT NULL,
+  `login_token` varchar(50) DEFAULT NULL,
+  `browser` varchar(100) DEFAULT NULL,
+  `token_timestamp` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`uid`, `role`, `username`, `password`, `salt`, `created_at`, `last_login`, `last_password_update`, `is_active`, `confirm_token`, `is_confirm`, `sid`, `login_token`, `browser`, `token_timestamp`) VALUES
+(1, 1, 'admin', '262c16d7d85cd0287b9151f7535f262ca2965290650c249492166d63ece557f6d164e5183c9fdfa5f7c2353fc2acd3640f4e6b645dc718d318c54a40958b5b38', 'f9e2f8359dac54bb8512239d4c', '2018-07-10 04:40:07', '2018-07-10 04:07:26', NULL, 1, NULL, 1, NULL, NULL, NULL, NULL),
+(2, 2, 'garg.permil@gmail.com', 'abcd', '', '2018-07-10 10:32:20', '2018-07-09 22:31:36', NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(3, 2, 'knsdjkg', 'sdnsdfkj', '', '2018-07-10 10:47:17', NULL, NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(4, 2, 'knsdjkgdsfsdf', 'sdnsdfkj', '', '2018-07-10 10:49:20', NULL, NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(6, 2, 'abcd@asd.com', 'b9d1f08e3cc81a720260c7cada3b7cc928e24aa4ff585c9ec2', '', '2018-07-10 11:16:59', NULL, NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(7, 2, 'poi@pooi.com', '752210b001b231c1ab7990588e0cbe7826ea147edac32c0096', '1299323668eef064e6cadbfc00', '2018-07-10 11:19:59', NULL, NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(8, 2, 'permil@abc.com', '926d8bb1097260b56f803657043712f82cace52a7acb3eea0f5b8a45627a8bdc256d7588da70eb054eefd4d1eb0423128ebf883c9d35a60f321cd9e99ffdd109', '916756e6ada198e0d40ca6471a', '2018-07-10 11:23:57', NULL, NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(9, 2, 'cderfv@sdfsdf.com', '19db47151a0c9371d9154eba307b5715af8d210f8530c1ca0b8f527dbbf985f83f810d387786e90bbf1fe42cfa60b3a43086f80ec0a4807989a46ba91448b087', '786a21e1d2079d5e2122c08428', '2018-07-10 11:26:35', NULL, NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(10, 2, 'saxzwq@wqsaxz.com', 'df5d0c8868a50772592ec445730feb8a1175bd53880076b3f94c08d76d44e39a6aa4aea584d5b748310142c1c82e82a19f8e49f3b8effeb904cc1228c8ca0ceb', '78b837b321822cdd8d2a77db43', '2018-07-10 11:27:34', '2018-07-09 23:38:16', NULL, 1, NULL, 0, NULL, NULL, NULL, NULL),
+(11, 2, 'vip@vip', '262c16d7d85cd0287b9151f7535f262ca2965290650c249492166d63ece557f6d164e5183c9fdfa5f7c2353fc2acd3640f4e6b645dc718d318c54a40958b5b38', 'f9e2f8359dac54bb8512239d4c', '2018-07-10 11:46:34', '2018-07-09 23:44:43', NULL, 1, NULL, 0, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_video_tutorial`
+--
+
+CREATE TABLE `tbl_video_tutorial` (
+  `vid` int(10) NOT NULL,
+  `tid` int(10) NOT NULL,
+  `duration` int(3) NOT NULL,
+  `file_loc` varchar(100) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `is_sample` int(1) NOT NULL,
+  `uploaded_by` int(10) NOT NULL,
+  `faculty_id` int(10) NOT NULL,
+  `upload_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_deleted` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  ADD PRIMARY KEY (`cid`);
+
+--
+-- Indexes for table `tbl_enquiry`
+--
+ALTER TABLE `tbl_enquiry`
+  ADD PRIMARY KEY (`eid`),
+  ADD UNIQUE KEY `email_id` (`email_id`),
+  ADD UNIQUE KEY `phone` (`phone`);
+
+--
+-- Indexes for table `tbl_faculty`
+--
+ALTER TABLE `tbl_faculty`
+  ADD PRIMARY KEY (`fid`);
+
+--
+-- Indexes for table `tbl_rating`
+--
+ALTER TABLE `tbl_rating`
+  ADD PRIMARY KEY (`rid`);
+
+--
+-- Indexes for table `tbl_student`
+--
+ALTER TABLE `tbl_student`
+  ADD PRIMARY KEY (`sid`),
+  ADD UNIQUE KEY `email_id` (`email_id`),
+  ADD UNIQUE KEY `Phone_no` (`Phone_no`);
+
+--
+-- Indexes for table `tbl_tutorial`
+--
+ALTER TABLE `tbl_tutorial`
+  ADD PRIMARY KEY (`tid`);
+
+--
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`uid`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `sid` (`sid`),
+  ADD UNIQUE KEY `login_token` (`login_token`),
+  ADD UNIQUE KEY `confirm_token` (`confirm_token`);
+
+--
+-- Indexes for table `tbl_video_tutorial`
+--
+ALTER TABLE `tbl_video_tutorial`
+  ADD PRIMARY KEY (`vid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_category`
+--
+ALTER TABLE `tbl_category`
+  MODIFY `cid` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_enquiry`
+--
+ALTER TABLE `tbl_enquiry`
+  MODIFY `eid` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_faculty`
+--
+ALTER TABLE `tbl_faculty`
+  MODIFY `fid` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_rating`
+--
+ALTER TABLE `tbl_rating`
+  MODIFY `rid` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_student`
+--
+ALTER TABLE `tbl_student`
+  MODIFY `sid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `tbl_tutorial`
+--
+ALTER TABLE `tbl_tutorial`
+  MODIFY `tid` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `uid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `tbl_video_tutorial`
+--
+ALTER TABLE `tbl_video_tutorial`
+  MODIFY `vid` int(10) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

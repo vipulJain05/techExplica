@@ -1,0 +1,19 @@
+export class Contact {
+name:string;
+email:string;
+school:string;
+phone:number;
+message:string;
+constructor(name:string,
+    email:string,
+    school:string,
+    phone:number,
+    message:string)
+    {
+        this.name=name;
+        this.email=email;
+        this.school=school;
+        this.phone=phone;
+        this.message=message;
+    }
+}
